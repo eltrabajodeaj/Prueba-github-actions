@@ -63,7 +63,9 @@ jobs:
           fi
 
       - name: Fetch target branch
-        run: git fetch origin "$TARGET_BRANCH":"$TARGET_BRANCH" --depth=100
+        run: |
+          git config --global --add safe.directory /__w/Prueba-github-actions/Prueba-github-actions
+          git fetch origin "$TARGET_BRANCH":"$TARGET_BRANCH" --depth=100
 
       - name: Build
         run: |
