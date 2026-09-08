@@ -56,7 +56,6 @@ jobs:
       - name: Configurar Git Safe Directory
         run: git config --global safe.directory "*"
 
-
       # En PR usamos el base branch de la propia PR.
       # En workflow_dispatch no hay PR: usamos el input target_branch como referencia de diff.
       - name: Determinar rama objetivo
