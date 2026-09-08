@@ -1,7 +1,7 @@
 # Prueba: sin labels. El build corre solo al abrir/actualizar la PR.
 # Validate + deploy se lanzan a mano desde Actions (workflow_dispatch),
 # eligiendo ahi mismo la rama objetivo (=entorno) y el nivel de tests.
-name: Salesforce CI/CD (demo sin labels)
+name: Salesforce CI/CD (sin labels)
 
 on:
   pull_request:
@@ -55,7 +55,7 @@ jobs:
       - name: Configurar Git Safe Directory
         run: git config --global safe.directory "*"
 
-        
+
       # En PR usamos el base branch de la propia PR.
       # En workflow_dispatch no hay PR: usamos el input target_branch como referencia de diff.
       - name: Determinar rama objetivo
