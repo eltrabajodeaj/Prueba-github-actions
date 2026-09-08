@@ -1,7 +1,7 @@
 # Prueba: sin labels. El build corre solo al abrir/actualizar la PR.
 # Validate + deploy se lanzan a mano desde Actions (workflow_dispatch),
 # eligiendo ahi mismo la rama objetivo (=entorno) y el nivel de tests.
-name: Salesforce CI/CD (demo sin labels)
+name: Salesforce CI/CD (sin labels)
 
 on:
   pull_request:
@@ -50,6 +50,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.sha }} 
           fetch-depth: 0
 
       - name: Configurar Git Safe Directory
