@@ -42,7 +42,7 @@ permissions:
 
 jobs:
   build:
-    name: Build (generar package.xml + mdapi zip)
+    name: Build (generar package.xml)
     runs-on: ubuntu-latest
     container:
       image: salesforce/cli:2.130.9-slim
